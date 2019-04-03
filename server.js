@@ -1,12 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 
-//  Controllers
+const middleware = require('./middleware/config');
+
 const userController = require('./controllers/user');
 
 const server = express();
 
-// Route handling
+server.use(middleware(server));
+
 server.use('/api/', userController);
 
 const port = process.env.PORT;
