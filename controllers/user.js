@@ -44,6 +44,9 @@ router.post('/login', async (req, res) => {
 	}
 });
 
+// get all users
+router.get('/users', async (req, res) => {});
+
 function generateToken(user) {
 	const payload = {
 		subject: user.id,
