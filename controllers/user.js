@@ -45,7 +45,16 @@ router.post('/login', async (req, res) => {
 });
 
 // get all users
-router.get('/users', async (req, res) => {});
+router.get('/users', async (req, res) => {
+	try {
+		const users = await Users.find();
+		res.status(200).json(users);
+	} catch (err) {
+		res.status(500).json({
+			message: 'Sorry, but there was an error while retrieving all users'
+		});
+	}
+});
 
 function generateToken(user) {
 	const payload = {
