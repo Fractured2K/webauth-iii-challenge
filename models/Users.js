@@ -1,10 +1,17 @@
 const db = require('../database/dbConfig');
 
 module.exports = {
+	add,
 	find,
 	findBy,
 	findById
 };
+
+function add(user) {
+	const [id] = db('users').insert(user);
+
+	return findById(id);
+}
 
 function find() {
 	return db('users');
