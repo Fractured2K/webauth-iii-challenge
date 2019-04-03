@@ -9,7 +9,7 @@ const userController = require('./controllers/user');
 const server = express();
 
 // middleware
-server.use(middleware(server));
+middleware(server);
 
 // route handlers
 server.use('/api/', userController);
