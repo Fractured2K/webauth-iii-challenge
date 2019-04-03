@@ -2,6 +2,8 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+const { restricted } = require('../middleware/restricted');
+
 const Users = require('../models/Users');
 
 // register user
@@ -45,7 +47,7 @@ router.post('/login', async (req, res) => {
 });
 
 // get all users
-router.get('/users', async (req, res) => {
+router.get('/users', restricted, async (req, res) => {
 	try {
 		const users = await Users.find();
 		res.status(200).json(users);
