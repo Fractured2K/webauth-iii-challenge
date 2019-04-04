@@ -13,6 +13,7 @@ class App extends Component {
 			<div className="App">
 				<header>
 					<NavLink to="/">Home</NavLink>
+					<NavLink to="/">Login</NavLink>
 				</header>
 
 				<Route path="/register" component={Register} />
