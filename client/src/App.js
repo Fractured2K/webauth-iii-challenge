@@ -22,7 +22,7 @@ class App extends Component {
 					path="/register"
 					render={props => <Register {...props} />}
 				/>
-				<Route path="/login" component={Login} />
+				<Route path="/login" render={props => <Login {...props} />} />
 				<Route path="/users" component={Users} />
 			</div>
 		);
