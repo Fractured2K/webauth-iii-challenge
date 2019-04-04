@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Register extends Component {
 	state = {
@@ -10,7 +11,7 @@ class Register extends Component {
 	render() {
 		return (
 			<div>
-				<form>
+				<form onSubmit={this.onSubmit}>
 					<input
 						type="text"
 						name="username"
@@ -41,6 +42,15 @@ class Register extends Component {
 		this.setState({
 			[e.target.name]: e.target.value
 		});
+	};
+
+	onSubmit = e => {
+		e.preventDefault();
+
+		axios
+			.post('http://localhost:5000/api/register', this.state)
+			.then(res => console.log(res))
+			.catch(err => console.log(err));
 	};
 }
 
