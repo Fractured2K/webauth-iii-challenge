@@ -58,6 +58,8 @@ class Register extends Component {
 					password: '',
 					department: ''
 				});
+
+				this.props.history.push('/users');
 			})
 			.catch(err => console.log(err));
 	};

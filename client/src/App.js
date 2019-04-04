@@ -12,13 +12,16 @@ class App extends Component {
 		return (
 			<div className="App">
 				<header>
-					<NavLink to="/">Home</NavLink>
-					<NavLink to="/register">Register</NavLink>
-					<NavLink to="/login">Login</NavLink>
-					<NavLink to="/users">Users</NavLink>
+					<NavLink to="/">Home</NavLink>{' '}
+					<NavLink to="/register">Register</NavLink>{' '}
+					<NavLink to="/login">Login</NavLink>{' '}
+					<NavLink to="/users">Users</NavLink>{' '}
 				</header>
 
-				<Route path="/register" component={Register} />
+				<Route
+					path="/register"
+					render={props => <Register {...props} />}
+				/>
 				<Route path="/login" component={Login} />
 				<Route path="/users" component={Users} />
 			</div>
