@@ -15,6 +15,7 @@ class App extends Component {
 					<NavLink to="/">Home</NavLink>
 					<NavLink to="/register">Register</NavLink>
 					<NavLink to="/login">Login</NavLink>
+					<NavLink to="/users">Users</NavLink>
 				</header>
 
 				<Route path="/register" component={Register} />
