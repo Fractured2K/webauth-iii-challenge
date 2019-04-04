@@ -5,7 +5,7 @@ import './App.css';
 
 import Register from './components/Auth/Register';
 import Login from './components/Auth/Login';
-import Users from './components/Users';
+import UserList from './components/UserList';
 
 class App extends Component {
 	render() {
@@ -33,7 +33,7 @@ class App extends Component {
 					render={props => <Register {...props} />}
 				/>
 				<Route path="/login" render={props => <Login {...props} />} />
-				<Route path="/users" component={Users} />
+				<Route path="/users" component={UserList} />
 			</div>
 		);
 	}

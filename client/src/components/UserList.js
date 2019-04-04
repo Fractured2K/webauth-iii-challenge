@@ -2,8 +2,9 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 
 import isAuthenticated from './Auth/isAuthenticated';
+import User from './User';
 
-class Users extends Component {
+class UserList extends Component {
 	state = {
 		users: []
 	};
@@ -13,8 +14,10 @@ class Users extends Component {
 			<Fragment>
 				<h2>List of Users</h2>
 				<ul>
-					{this.state.users.map(u => (
-						<li key={u.id}>{u.username}</li>
+					{this.state.users.map(user => (
+						<ul key={user.id}>
+							<User {...user} />
+						</ul>
 					))}
 				</ul>
 			</Fragment>
@@ -33,4 +36,4 @@ class Users extends Component {
 	};
 }
 
-export default isAuthenticated(Users);
+export default isAuthenticated(UserList);
