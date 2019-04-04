@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 
 import isAuthenticated from './Auth/isAuthenticated';
@@ -10,9 +10,14 @@ class Users extends Component {
 
 	render() {
 		return (
-			<div>
-				<h1>Users</h1>
-			</div>
+			<Fragment>
+				<h2>List of Users</h2>
+				<ul>
+					{this.state.users.map(u => (
+						<li key={u.id}>{u.username}</li>
+					))}
+				</ul>
+			</Fragment>
 		);
 	}
 
