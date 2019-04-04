@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Route, NavLink } from 'react-router-dom';
 
 import './App.css';
@@ -13,9 +13,16 @@ class App extends Component {
 			<div className="App">
 				<header>
 					<NavLink to="/">Home</NavLink>{' '}
-					<NavLink to="/register">Register</NavLink>{' '}
-					<NavLink to="/login">Login</NavLink>{' '}
-					<NavLink to="/users">Users</NavLink>{' '}
+					{!localStorage.getItem('token') ? (
+						<Fragment>
+							<NavLink to="/register">Register</NavLink>{' '}
+							<NavLink to="/login">Login</NavLink>{' '}
+						</Fragment>
+					) : (
+						<Fragment>
+							<NavLink to="/users">Users</NavLink>{' '}
+						</Fragment>
+					)}
 				</header>
 
 				<Route

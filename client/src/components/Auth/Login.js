@@ -49,6 +49,8 @@ class Login extends Component {
 					username: '',
 					password: ''
 				});
+
+				this.props.history.push('/users');
 			})
 			.catch(err => console.log(err));
 	};
