@@ -21,6 +21,9 @@ class App extends Component {
 					) : (
 						<Fragment>
 							<NavLink to="/users">Users</NavLink>{' '}
+							<NavLink to="/" onClick={this.logOut}>
+								Log out
+							</NavLink>{' '}
 						</Fragment>
 					)}
 				</header>
@@ -34,6 +37,10 @@ class App extends Component {
 			</div>
 		);
 	}
+
+	logOut = () => {
+		localStorage.removeItem('token');
+	};
 }
 
 export default App;
