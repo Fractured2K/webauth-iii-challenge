@@ -33,6 +33,7 @@ class Register extends Component {
 						value={this.state.department}
 						onChange={this.handleChanges}
 					/>
+					<button>Register</button>
 				</form>
 			</div>
 		);
