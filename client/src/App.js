@@ -11,6 +11,10 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+				<header>
+					<NavLink to="/">Home</NavLink>
+				</header>
+
 				<Route path="/register" component={Register} />
 				<Route path="/login" component={Login} />
 				<Route path="/users" component={Users} />
