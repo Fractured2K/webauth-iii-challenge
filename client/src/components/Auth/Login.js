@@ -4,14 +4,29 @@ import axios from 'axios';
 class Login extends Component {
 	state = {
 		username: '',
-		password: '',
-		department: ''
+		password: ''
 	};
 
 	render() {
 		return (
 			<div>
-				<h1>Login</h1>
+				<form onSubmit={this.onSubmit}>
+					<input
+						type="text"
+						name="username"
+						placeholder="username"
+						value={this.state.username}
+						onChange={this.handleChanges}
+					/>
+					<input
+						type="password"
+						name="password"
+						placeholder="password"
+						value={this.state.password}
+						onChange={this.handleChanges}
+					/>
+					<button>Login</button>
+				</form>
 			</div>
 		);
 	}
@@ -32,8 +47,7 @@ class Login extends Component {
 
 				this.setState({
 					username: '',
-					password: '',
-					department: ''
+					password: ''
 				});
 			})
 			.catch(err => console.log(err));
