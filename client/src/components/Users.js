@@ -15,6 +15,17 @@ class Users extends Component {
 			</div>
 		);
 	}
+
+	componentDidMount = () => {
+		axios
+			.get('/users')
+			.then(res => {
+				this.setState({ users: res.data });
+			})
+			.catch(err => {
+				console.log(err);
+			});
+	};
 }
 
 export default isAuthenticated(Users);
